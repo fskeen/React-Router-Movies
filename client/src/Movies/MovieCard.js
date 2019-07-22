@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const MovieCard = props => {
-  const { title, director, metascore, stars, id } = props;
+  const { title, director, metascore, stars, id } = props.movie;
   console.log(props)
   return (
     <Link to={`/movies/${id}`}>
@@ -17,7 +17,7 @@ const MovieCard = props => {
       </div>
       <h3>Actors</h3>
 
-      {props.movie.stars.map(star => (
+      {stars.map(star => (
         <div key={star} className="movie-star">
           {star}
         </div>
