@@ -4,6 +4,7 @@ import MovieCard from './MovieCard';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
+  const [movieSaved, setMovieSaved] = useState(false);
  
   useEffect(() => {
     const id = props.match.params.id;
@@ -23,10 +24,15 @@ const Movie = (props) => {
 
   
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = () => {
-  //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
-  // }
+
+  useEffect(() => {
+    if(movieSaved===true) {
+      const addToSavedList = props.addToSavedList;
+      console.log("IN THE FUNCTION: ", movie)
+      return addToSavedList(movie)
+    }
+    return
+  }, [movieSaved])
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -35,7 +41,7 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <MovieCard key={movie.id} movie={movie}/>
-      <div className="save-button">Save</div>
+      <div onClick={() => setMovieSaved(true)} className="save-button">Save</div>
     </div>
   );
 }
