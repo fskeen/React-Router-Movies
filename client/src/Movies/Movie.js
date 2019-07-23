@@ -26,12 +26,12 @@ const Movie = (props) => {
   // Uncomment this only when you have moved on to the stretch goals
 
   useEffect(() => {
-    if(movieSaved===true) {
+    if (movieSaved===true) {
       const addToSavedList = props.addToSavedList;
       console.log("IN THE FUNCTION: ", movie)
-      return addToSavedList(movie)
+      return addToSavedList(movie);
     }
-    return
+    return;
   }, [movieSaved])
 
   if (!movie) {
