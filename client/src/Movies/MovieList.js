@@ -3,26 +3,35 @@ import axios from 'axios';
 import {Link} from 'react-router-dom'
 
 const MovieList = props => {
-  const [movies, setMovies] = useState([])
+  const {movies, setMovies, results, searching} = props;
+  const [displayed, setDisplayed] = useState(movies);
+
+  const getMovies = () => {
+    axios
+      .get('http://localhost:5000/api/movies')
+      .then(response => {
+        console.log(response)
+        setMovies(response.data)
+        setDisplayed(response.data)
+      })
+      .catch(error => {
+        console.error('Server Error', error);
+      });
+  }
+
   useEffect(() => {
-    const getMovies = () => {
-      axios
-        .get('http://localhost:5000/api/movies')
-        .then(response => {
-          console.log(response)
-          setMovies(response.data);
-        })
-        .catch(error => {
-          console.error('Server Error', error);
-        });
+    if (searching) {
+      setDisplayed(results)
+    } else {
+      getMovies();
     }
-    
-    getMovies();
-  }, []);
+
+  }, [results, searching]);
   
   return (
     <div className="movie-list">
-      {movies.map(movie => (
+    
+      {(searching && !results.length) ? <p>No results.</p> : displayed.map(movie => (
         <Link to={`/movies/${movie.id}`} key={movie.id}>
           <MovieDetails movie={movie} />
         </Link>
