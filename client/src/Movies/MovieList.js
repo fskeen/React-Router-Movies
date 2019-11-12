@@ -25,7 +25,6 @@ const MovieList = props => {
     } else {
       getMovies();
     }
-
   }, [results, searching]);
   
   return (
@@ -45,11 +44,13 @@ function MovieDetails({ movie }) {
   return (
     <div className="movie-card">
       <h2>{title}</h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
+      <div>
+      <h3 className="movie-director">
+      Director: <br/><em>{director}</em>
+      </h3>
+      <h3 className="movie-metascore">
+      Metascore: <br/><strong>{metascore}</strong>
+      </h3>
       </div>
       <h3>Actors</h3>
 

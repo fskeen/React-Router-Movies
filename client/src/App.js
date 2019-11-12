@@ -43,8 +43,7 @@ const App = () => {
 
   return (
     <div>
-      <SavedList list={savedList} setSavedList={setSavedList} />
-
+    <SavedList list={savedList} setSavedList={setSavedList} />
       <form onSubmit={searchMovies}>
         <label htmlFor="search">Search for a movie</label>
         <input
@@ -52,16 +51,19 @@ const App = () => {
           name="search"
           id="search"
           value={query}
-          onChange={handleChange}></input>
-          <button type="submit">Search</button>
-      </form>
-
-      {query.length > 0 ? 
-        <button 
+          onChange={handleChange}>
+        </input>
+        <button type="submit">Search</button>
+        
+        {query.length > 0 ? 
+          <button 
           onClick={() => {
             setQuery("")
             setSearching(false)
-          }}>Clear search</button> : ""}
+          }}>Clear search</button> : ""
+        }
+      </form>
+
 
       <Route
         exact

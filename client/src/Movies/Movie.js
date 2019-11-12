@@ -39,11 +39,13 @@ const Movie = (props) => {
     <div className="save-wrapper">
       <div className="movie-card">
         <h2>{title}</h2>
+        <div>
         <div className="movie-director">
-          Director: <em>{director}</em>
+        Director: <em>{director}</em>
         </div>
         <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
+        Metascore: <strong>{metascore}</strong>
+        </div>
         </div>
         <h3>Actors</h3>
 
@@ -52,8 +54,8 @@ const Movie = (props) => {
             {star}
           </div>
         ))}
+        <button onClick={saveMovie} className="save-button">Save</button>
       </div>
-      <button onClick={saveMovie} className="save-button">Save</button>
     </div>
   );
 }
