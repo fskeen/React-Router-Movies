@@ -10,7 +10,7 @@ const SavedList = props => (
       <button onClick={() => {
         const removed = props.list.filter(item => item.id !== movie.id)
         props.setSavedList(removed)
-      }}>X</button></span>
+      }}>x</button></span>
     ))}
     <Link to="/" className="home-button">Home</Link>
   </div>

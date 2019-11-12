@@ -4,6 +4,7 @@ import {Route, Link} from 'react-router-dom';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
+import Search from './Movies/Search';
 
 const App = (props) => {
   const [savedList, setSavedList] = useState( [] );
@@ -43,28 +44,14 @@ const App = (props) => {
 
   return (
     <div>
-    <SavedList list={savedList} setSavedList={setSavedList} setQuery={setQuery} />
-      <form onSubmit={searchMovies}>
-        <label htmlFor="search">Search for a movie</label>
-        <input
-          type="text"
-          name="search"
-          id="search"
-          value={query}
-          onChange={handleChange}>
-        </input>
-        <button type="submit">Search</button>
-        
-        {query.length > 0 ? 
-          <button 
-          onClick={() => {
-            setQuery("")
-            setSearching(false)
-          }}>Clear search</button> : ""
-        }
-      </form>
-
-
+      <SavedList list={savedList} setSavedList={setSavedList} setQuery={setQuery} />
+      {console.log(props.location, "location")}
+      <Search 
+        searchMovies={searchMovies}
+        query={query}
+        setQuery={setQuery}
+        setSearching={setSearching}
+      />
       <Route
         exact
         path="/"

@@ -22,7 +22,7 @@ a {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
   outline: 3px solid #90c4ee;
   outline-offset: -5px;
   transition: transform .3s ease;
@@ -75,12 +75,28 @@ h3:nth-child(3) {
   width: 40%;
 }
 
+.actor-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* padding: 1rem; */
+}
+
 .movie-star {
   /* border: 1px solid blue; */
   /* color: white; */
+  padding: .2rem;
 }
+
 .movie-star:nth-of-type(1) {
-  background-color: salmon;
+  background-color: rgba(255, 202, 152, 0.651);
+}
+.movie-star:nth-of-type(2) {
+  background-color: rgba(255, 187, 124, 0.623);
+}
+.movie-star:nth-of-type(3) {
+  background-color: rgba(255, 166, 125, 0.651);
+  padding-bottom: .5rem;
 }
 
 .saved-list {

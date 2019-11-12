@@ -10,7 +10,7 @@ const MovieList = props => {
     axios
       .get('http://localhost:5000/api/movies')
       .then(response => {
-        console.log(response)
+        // console.log(response)
         setMovies(response.data)
         setDisplayed(response.data)
       })
@@ -52,13 +52,15 @@ function MovieDetails({ movie }) {
       Metascore: <br/><strong>{metascore}</strong>
       </h3>
       </div>
+      <div className="actor-container">
       <h3>Actors</h3>
-
+      
       {stars.map(star => (
         <div key={star} className="movie-star">
-          {star}
+        {star}
         </div>
-      ))}
+        ))}
+        </div>
     </div>
   );
 }
