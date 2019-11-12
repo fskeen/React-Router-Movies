@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
-const App = () => {
+const App = (props) => {
   const [savedList, setSavedList] = useState( [] );
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([])
@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <div>
-    <SavedList list={savedList} setSavedList={setSavedList} />
+    <SavedList list={savedList} setSavedList={setSavedList} setQuery={setQuery} />
       <form onSubmit={searchMovies}>
         <label htmlFor="search">Search for a movie</label>
         <input
@@ -84,7 +84,8 @@ const App = () => {
           <Movie
             {...props} 
             savedList={savedList} 
-            addToSavedList={addToSavedList} />
+            addToSavedList={addToSavedList}
+            searching={searching} />
         }>
       </Route>
     </div>

@@ -40,14 +40,14 @@ a {
   width: 100%;
   /* border: 1px solid red; */
   justify-content: space-around;
-  max-width: 75rem;
+  max-width: 70rem;
   margin: 0 auto;
 }
 
 h2 {
   text-align: center;
   font-size: 1rem;
-  background-image:linear-gradient(110deg, #ffc935 10%, #ff7728 80%);
+  background-image:linear-gradient(110deg, #ffb71d 10%, #ff7728 80%);
   color: rgb(255, 255, 255);
   text-shadow: 2px 1px 5px rgb(221, 96, 46);
   letter-spacing: 0px;
@@ -95,6 +95,7 @@ h3:nth-child(3) {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 60rem;
 }
 
 .saved-list h3 {
@@ -132,6 +133,7 @@ h3:nth-child(3) {
 .save-button:hover {
   background-color: rgb(255, 245, 107);
   cursor: pointer;
+  color: black;
 }
 
 .home-button {
@@ -151,6 +153,7 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 70rem;
 }
 
 input {

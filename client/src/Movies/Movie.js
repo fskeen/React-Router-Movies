@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
+  const {searching} = props;
 
   useEffect(() => {
     const id = props.match.params.id;
@@ -16,7 +17,9 @@ const Movie = (props) => {
         .catch(error => {
           console.error(error);
         });
-
+    // if (searching) {
+    //   props.history.push("/")
+    // }
   },[props.match.params.id]);
   
   // Uncomment this only when you have moved on to the stretch goals
