@@ -45,7 +45,6 @@ const App = (props) => {
   return (
     <div>
       <SavedList list={savedList} setSavedList={setSavedList} setQuery={setQuery} />
-      {console.log(props.location, "location")}
       <Search 
         searchMovies={searchMovies}
         query={query}
