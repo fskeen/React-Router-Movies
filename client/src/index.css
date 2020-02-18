@@ -2,29 +2,106 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #f2f2f2;
+  background-color: #90c4ee;
+}
+a {
+  text-decoration: none;
+  color: rgb(61, 61, 61);
 }
 
 .movie-card {
-  background-color: #fff;
-  border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
-  padding: 1rem;
+  background-color: rgb(255, 241, 223);
+  box-shadow: 2px 2px 3px rgba(0, 34, 77, 0.25);
+  /* padding: 1rem; */
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  width: 16rem;
+  height: 14.5rem;
+  margin: 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  /* padding-bottom: 1rem; */
+  outline: 3px solid #90c4ee;
+  outline-offset: -5px;
+  transition: transform .3s ease;
 }
 
-.movie-director {
-  padding: 4px 0;
+.movie-card:hover {
+  transform: scale(1.03);
+  transition: transform .1s ease;
+  background-color: white;
+}
+
+.movie-list {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  /* border: 1px solid red; */
+  justify-content: space-around;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1rem;
+  background-image:linear-gradient(110deg, #ffb71d 10%, #ff7728 80%);
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 1px 5px rgb(221, 96, 46);
+  letter-spacing: 0px;
+  padding: 1rem;
+  margin: 0;
+}
+
+h3 {
+  text-align: center;
+  margin: 0
+}
+h3:nth-child(3) {
+  /* bordeR: 1px solid green; */
+  margin: 0 0 .5rem 0;
+}
+
+.movie-card div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.movie-director, .movie-metascore {
+  padding: 0 0 1rem 0;
   font-size: 0.8rem;
+  width: 40%;
+}
+
+.actor-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* padding: 1rem; */
+}
+
+.movie-star {
+  /* border: 1px solid blue; */
+  /* color: white; */
+  padding: .2rem;
+}
+
+.movie-star:nth-of-type(1) {
+  background-color: rgba(255, 202, 152, 0.651);
+}
+.movie-star:nth-of-type(2) {
+  background-color: rgba(255, 187, 124, 0.623);
+}
+.movie-star:nth-of-type(3) {
+  background-color: rgba(255, 166, 125, 0.651);
+  padding-bottom: .5rem;
 }
 
 .saved-list {
-  background-color: #fff;
-  border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
+  background-color: #d1e9fc;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
   padding: 1rem;
   cursor: pointer;
@@ -34,10 +111,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 60rem;
 }
 
 .saved-list h3 {
   margin-right: 10px;
+  color: #3269b1;
 }
 
 .saved-movie {
@@ -45,7 +124,6 @@ body {
 }
 .saved-active {
   color: blue;
-  border: 1px solid grey;
   padding: 5px;
 }
 .save-wrapper {
@@ -54,19 +132,62 @@ body {
   margin: 1rem auto;
 }
 .save-button {
-  position: absolute;
+  /* position: absolute;
   top: 25px;
-  right: 25px;
-  border: 1px solid grey;
+  right: 25px; */
   padding: 5px 10px;
-  background-color: lightseagreen;
+  background-color: rgb(255, 205, 96);
+  position: relative;
+  z-index: 9;
+  border: none;
+  padding: .5rem;
+  box-shadow: 2px 2px 3px rgb(192, 130, 50);
+  position: absolute;
+  bottom: 1rem;
+  left: 12rem;
 }
 .save-button:hover {
-  background-color: green;
-  color: white;
+  background-color: rgb(255, 245, 107);
+  cursor: pointer;
+  color: black;
 }
 
 .home-button {
-  padding: 5px 10px;
-  background-color: lightskyblue;
+  padding: .75rem;
+  background-color: #3269b1;
+  color: white
+}
+.home-button:hover {
+  background-color: #ff7728;
+  color: white;
+}
+
+form {
+  margin: 0 auto;
+  padding: 1rem;
+  /* border: 1px red solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 70rem;
+}
+
+input {
+  padding: .75rem;
+  border: none;
+  margin-left: 1rem;
+  width: 50%;
+}
+
+form button {
+  padding: .75rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 3px;
+  background-color: #3269b1;
+  color: white;
+}
+button:hover {
+  background-color: #ff7728;
+  color: white;
 }
